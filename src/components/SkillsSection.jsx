@@ -5,35 +5,35 @@ import { CertificateCarousel } from "./CertificateCarousel";
 const skills = [
   {
     name: "HTML/CSS",
-    level: 95,
+    level: 0,
     category: "frontend",
-    certificates: [
-      {
-        imageUrl: "/certificates/html-css-1.png",
-        name: "HTML/CSS Fundamentals",
-        date: "June 2022",
-        issuer: "Code Academy"
-      },
-      {
-        imageUrl: "/certificates/html-css-2.png",
-        name: "Advanced CSS Mastery",
-        date: "August 2022",
-        issuer: "Web Dev Institute"
-      }
-    ]
+    // certificates: [
+    //   {
+    //     imageUrl: "/certificates/html-css-1.png",
+    //     name: "HTML/CSS Fundamentals",
+    //     date: "June 2022",
+    //     issuer: "Code Academy",
+    //   },
+    //   {
+    //     imageUrl: "/certificates/html-css-2.png",
+    //     name: "Advanced CSS Mastery",
+    //     date: "August 2022",
+    //     issuer: "Web Dev Institute",
+    //   },
+    // ],
   },
-  { 
-    name: "JavaScript", 
-    level: 90, 
+  {
+    name: "JavaScript",
+    level: 0,
     category: "frontend",
     certificates: [
       {
         imageUrl: "/certificates/js-cert.png",
         name: "JavaScript Expert",
         date: "March 2023",
-        issuer: "JS Foundation"
-      }
-    ]
+        issuer: "JS Foundation",
+      },
+    ],
   },
   { name: "React", level: 90, category: "frontend" },
   { name: "TypeScript", level: 85, category: "frontend" },
@@ -46,7 +46,7 @@ const skills = [
   { name: "Git/GitHub", level: 90, category: "tools" },
   { name: "Docker", level: 70, category: "tools" },
   { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" }
+  { name: "VS Code", level: 95, category: "tools" },
 ];
 
 const categories = ["all", "frontend", "backend", "tools"];
@@ -55,9 +55,7 @@ export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedCertificates, setSelectedCertificates] = useState(null);
 
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
+  const filteredSkills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory);
 
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30 dark:bg-gray-900/50">
@@ -74,9 +72,7 @@ export const SkillsSection = () => {
               className={cn(
                 "px-5 py-2 rounded-full transition-all duration-300 capitalize",
                 "hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50",
-                activeCategory === category
-                  ? "bg-primary text-white shadow-lg"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary/90"
+                activeCategory === category ? "bg-primary text-white shadow-lg" : "bg-secondary/70 text-foreground hover:bg-secondary/90"
               )}
             >
               {category}
@@ -98,26 +94,17 @@ export const SkillsSection = () => {
             >
               <div className="flex justify-between items-start mb-3">
                 <h3 className="font-bold text-lg">{skill.name}</h3>
-                {skill.certificates && (
-                  <span className="text-xs bg-primary/10 text-primary dark:text-primary-300 px-2 py-1 rounded-full">
-                    {skill.certificates.length} certs
-                  </span>
-                )}
+                {skill.certificates && <span className="text-xs bg-primary/10 text-primary dark:text-primary-300 px-2 py-1 rounded-full">{skill.certificates.length} certs</span>}
               </div>
-              
+
               <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full mb-1">
-                <div
-                  className="bg-primary h-2 rounded-full"
-                  style={{ width: `${skill.level}%` }}
-                />
+                <div className="bg-primary h-2 rounded-full" style={{ width: `${skill.level}%` }} />
               </div>
-              
+
               <div className="flex justify-between items-center">
-                <span className="text-xs text-gray-500 dark:text-gray-400">
-                  Proficiency: {skill.level}%
-                </span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">Proficiency: {skill.level}%</span>
                 {skill.certificates && (
-                  <button 
+                  <button
                     className="text-xs text-primary hover:underline"
                     onClick={(e) => {
                       e.stopPropagation();
@@ -133,12 +120,7 @@ export const SkillsSection = () => {
         </div>
       </div>
 
-      {selectedCertificates && (
-        <CertificateCarousel
-          certificates={selectedCertificates}
-          onClose={() => setSelectedCertificates(null)}
-        />
-      )}
+      {selectedCertificates && <CertificateCarousel certificates={selectedCertificates} onClose={() => setSelectedCertificates(null)} />}
     </section>
   );
 };

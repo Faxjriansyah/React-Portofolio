@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 
 export const HeroSection = () => {
   return (
@@ -6,14 +7,23 @@ export const HeroSection = () => {
       <div className="container max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between z-10">
         {/* Kiri: Teks */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in">Hi, I'm</span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1"> Pedro</span>
-            <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2"> Machado</span>
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+            <span className="opacity-0 animate-fade-in">Hi, I'm </span>
+            <span className="text-primary block md:inline">
+              <Typewriter
+                words={["Fajriansyah", "Web Developer", "IT Enthusiast", "IT Support"]}
+                loop={0} // infinite loop
+                cursor
+                cursorStyle="_"
+                typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              />
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto md:mx-0 opacity-0 animate-fade-in-delay-3">
-            I create stellar web experiences with modern technologies. Specializing in front-end development, I build interfaces that are both beautiful and functional.
+            I'm Fajriansyah, a Web Developer who enjoys creating websites that are simple to use, visually appealing, and built with care.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
@@ -25,7 +35,7 @@ export const HeroSection = () => {
 
         {/* Kanan: Foto */}
         <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0 opacity-0 animate-fade-in-delay-4">
-          <img src="/your-photo.jpg" alt="Your Name" className="rounded-2xl shadow-lg w-64 h-64 object-cover" />
+          <img src="/fajriansyah.png" alt="Your Name" className="rounded-2xl  w-64 h-64 object-cover" />
         </div>
       </div>
 
