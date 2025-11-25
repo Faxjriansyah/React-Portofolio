@@ -15,7 +15,7 @@ export const HeroSection = () => {
             <span className="text-primary block md:inline">
               <Typewriter
                 words={[
-                  "Fajriansyah",
+                  "Fajriansyahssss",
                   "Web Developer",
                   "IT Enthusiast",
                   "IT Supports",
