@@ -15,10 +15,10 @@ export const HeroSection = () => {
             <span className="text-primary block md:inline">
               <Typewriter
                 words={[
-                  "Fajriansyahssss",
+                  "Fajriansyah",
                   "Web Developer",
                   "IT Enthusiast",
-                  "IT Supports",
+                  "IT Support",
                 ]}
                 loop={0} // infinite loop
                 cursor
