@@ -3,49 +3,41 @@ import { cn } from "../lib/utils";
 import { CertificateCarousel } from "./CertificateCarousel";
 
 const skills = [
+  // Frontend
   {
     name: "HTML/CSS",
-    level: 0,
+    level: 100,
     category: "frontend",
-    // certificates: [
-    //   {
-    //     imageUrl: "/certificates/html-css-1.png",
-    //     name: "HTML/CSS Fundamentals",
-    //     date: "June 2022",
-    //     issuer: "Code Academy",
-    //   },
-    //   {
-    //     imageUrl: "/certificates/html-css-2.png",
-    //     name: "Advanced CSS Mastery",
-    //     date: "August 2022",
-    //     issuer: "Web Dev Institute",
-    //   },
-    // ],
+    certificates: [
+      {
+        imageUrl: "/certificates/html-css-1.png",
+        name: "HTML/CSS Fundamentals",
+        date: "June 2022",
+        issuer: "Code Academy",
+      },
+      {
+        imageUrl: "/certificates/html-css-2.png",
+        name: "Advanced CSS Mastery",
+        date: "August 2022",
+        issuer: "Web Dev Institute",
+      },
+    ],
   },
   {
     name: "JavaScript",
     level: 0,
     category: "frontend",
-    certificates: [
-      {
-        imageUrl: "/certificates/js-cert.png",
-        name: "JavaScript Expert",
-        date: "March 2023",
-        issuer: "JS Foundation",
-      },
-    ],
   },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
+  { name: "React", level: 0, category: "frontend" },
+  { name: "TypeScript", level: 0, category: "frontend" },
+
+  // Backend
+  { name: "Laravel", level: 70, category: "backend" },
+  { name: "Node.js", level: 0, category: "backend" },
+  { name: "Golang", level: 0, category: "backend" },
+
+  // Tools
+  { name: "Git/GitHub", level: 70, category: "tools" },
   { name: "VS Code", level: 95, category: "tools" },
 ];
 
@@ -93,7 +85,8 @@ export const SkillsSection = () => {
               )}
             >
               <div className="flex justify-between items-start mb-3">
-                <h3 className="font-bold text-lg">{skill.name}</h3>
+                <h3 className="font-bold text-lg text-gray-900 dark:text-white">{skill.name}</h3>
+
                 {skill.certificates && <span className="text-xs bg-primary/10 text-primary dark:text-primary-300 px-2 py-1 rounded-full">{skill.certificates.length} certs</span>}
               </div>
 

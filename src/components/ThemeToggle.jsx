@@ -42,5 +42,7 @@ export const ThemeToggle = () => {
         <Moon className="h-6 w-6 text-blue-900" />
       )}
     </button>
+
   );
+
 };
